@@ -53,7 +53,7 @@ donationsController.deleteDonation = async (req, res) => {
     try {
         const donationDelete = await donationsModel.findByIdAndDelete(req.params.id)
 
-        if (!donationUpdate) {
+        if (!donationDelete) {
             return res.status(400).json({message: "Donation not found"})
         }
 

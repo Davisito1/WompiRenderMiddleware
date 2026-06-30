@@ -13,6 +13,7 @@ export const validateAuthCookie = (allowedTypes = []) => {
             }
 
             const decoded = jsonwebtoken.verify(authCookie, config.JWT.secret)
+            console.log(decoded)
 
             //verificar si el rol que esta tiene la cookie puede pasar o no
             if (!allowedTypes.includes(decoded.userType)) {
